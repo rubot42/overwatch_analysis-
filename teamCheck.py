@@ -3,7 +3,7 @@ import requests
 roles_dict = dict(tank=[''], support=[''], dps=[''])
 roles_dict["tank"] = ["D.Va", "Reinhardt", "Roadhog", "Winston", "Zarya", "Mei"]
 roles_dict["support"] = ["Ana", "Lucio", "Mercy", "Symmetra", "Zenyatta"]
-roles_dict["dps"] = ["Genji", "McCree", "Pharah", "Reaper", "Soldier: 76", "Tracer", "Bastion", "Hanzo", "Junkrat", "Torbjorn", "Widowmaker"]
+roles_dict["dps"] = ["Genji", "McCree", "Pharah", "Reaper", "Soldier: 76", "Tracer", "Bastion", "Hanzo", "Junkrat", "Torbjorn", "Widowmaker", "Sombra"]
 valid_heroes = []
 valid_heroes += roles_dict["tank"]
 valid_heroes += roles_dict["support"]
