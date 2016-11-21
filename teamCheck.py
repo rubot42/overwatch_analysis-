@@ -120,17 +120,20 @@ class Player:
 # print("dps:     " + str(player1.dpsValue) + "%")
 
 
-def teamComposer(team, region, tankNum, supportNum, dpsNum):
-    if ((tankNum + supportNum + dpsNum) != 6):
-        return "Team Composition Does not add up to 6"
-    outputString=""
+def teamCall(team, region):
     player0 = Player(team[0], region)
     player1 = Player(team[1], region)
     player2 = Player(team[2], region)
     player3 = Player(team[3], region)
     player4 = Player(team[4], region)
     player5 = Player(team[5], region)
-    playerList = [player0, player1, player2, player3, player4, player5]
+    return [player0, player1, player2, player3, player4, player5]
+
+
+def teamComposer(playerList, tankNum, supportNum, dpsNum):
+    if ((tankNum + supportNum + dpsNum) != 6):
+        return "Team Composition Does not add up to 6"
+    outputString = ""
     tankDict = {}
     tankList = []
     supportDict = {}
@@ -152,6 +155,7 @@ def teamComposer(team, region, tankNum, supportNum, dpsNum):
     supportList.reverse()
     dpsList.sort()
     dpsList.reverse()
+
     def percentToName(aList, aDict):
         newList = []
         for i in aList:
@@ -187,6 +191,8 @@ def teamComposer(team, region, tankNum, supportNum, dpsNum):
                 outputString += ("\t" + str(i+1) + ") " + topHeros[i] + "\n")
             outputString += "\n"
     return outputString
-teamRegion = "us"
+teamRegion1 = "us"
 team1 = ["Rubot42-1450", "Sarduin-1737", "Invis-1846", "nak-11167", "StormForge-11532", "Unk-11683"]
-print(teamComposer(team1, teamRegion, 2, 2, 2))
+playerList1 = teamCall(team1, teamRegion1)
+print(teamComposer(playerList1, 2, 2, 2))
+print(teamComposer(playerList1, 3, 2, 1))
